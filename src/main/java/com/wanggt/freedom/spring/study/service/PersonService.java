@@ -1,17 +1,34 @@
 package com.wanggt.freedom.spring.study.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import com.wanggt.freedom.spring.study.annotation.Log;
+import com.wanggt.freedom.spring.study.entity.PersonBean;
 
-@Service
-public class PersonService {
-	private Logger logger = LoggerFactory.getLogger(PersonService.class);
+/**
+ * 人员服务-Service
+ * 
+ * @author freedom wang
+ * @date 2018年4月4日下午8:31:06
+ * @version 1.0
+ */
+public interface PersonService {
 
-	@Log
-	public void addPerson() {
-		logger.info("PersonService#addPerson is invoke");
-	}
+	/**
+	 * 新增人员
+	 * @param name
+	 * @return
+	 * @author freedom wang
+	 * @date 2018年4月4日下午8:31:00
+	 * @version 1.0
+	 */
+	public PersonBean addPerson(Long id, String name);
+	
+	/**
+	 * 删除人员
+	 * @param id
+	 * @return
+	 * @author freedom wang
+	 * @date 2018年4月4日下午8:36:30
+	 * @version 1.0
+	 */
+	public PersonBean deletePerson(@Log Long id);
 }
